@@ -1,20 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Laborator3.Exercitii_Laborator;
 
-/**
- *
- * @author Ceachi Bogdan
- */
 public class Angajat {
     String nume;
     int varsta;
     String firma;
     float salariu;
-    static int numberOfEmployees= 0;
+    static int numberOfEmployees = 0;
    
     public Angajat(String nume, int varsta, String firma, float salariu) {
         this.nume = nume;
