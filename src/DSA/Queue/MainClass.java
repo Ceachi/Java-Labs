@@ -5,6 +5,8 @@
  */
 package DSA.Queue;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Ceachi Bogdan
@@ -18,5 +20,8 @@ public class MainClass {
         obj.enqueue(5);
         obj.enqueue(6);
         System.out.println(obj.dequeue());
+        
+        ArrayList e;
+        
     } 
 }

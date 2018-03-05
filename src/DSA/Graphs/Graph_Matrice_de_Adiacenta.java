@@ -1,12 +1,15 @@
-package Laborator3.Exercitii_Poli;
-import java.util.*;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package DSA.Graphs;
 
 /**
- * Problema 7, sa se creeze un Graph in care arcele nu au cost,
- * iar nodurile sunt numerotate de la 1;
+ *
  * @author Ceachi Bogdan
  */
-public class Ex7Graph {
+public class Graph_Matrice_de_Adiacenta {
     
     static class Graph {
         private boolean adiacentMatrix[][];
@@ -67,5 +70,4 @@ public class Ex7Graph {
         boolean vazut[] = new boolean[8];
         graph.dfs(1, vazut);
     }
-    
 }
