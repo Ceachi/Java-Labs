@@ -33,9 +33,10 @@ public class Ex1 {
                 count++;
             }
         }
+        System.gc();  
+        angajati[0] = null;
         System.out.println("In stadiul de internship sunt = " + count);
-         System.out.println("Number of employees = " + Angajat.numberOfEmployees);
-        
+        System.out.println("Number of employees = " + Angajat.numberOfEmployees);
         
     }
     

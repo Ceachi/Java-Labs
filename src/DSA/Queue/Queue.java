@@ -20,18 +20,21 @@ public class Queue {
     public Queue(int size) {
         v = new int[size];
     }
+    public Queue() {
+        v = new int[3];
+    }
     
     /**
      * introduce in coada 
      * @param item 
      */
     public void enqueue(int item) {
+        System.out.println("am introdus in caoda");
         if(!isFull()) {
             total++;
             v[end] = item;
             end++;
         }
-        return;
     }
     
     /**
@@ -60,7 +63,7 @@ public class Queue {
         for (int i = end; i < front; i++) {
             System.out.println(v[i]);
         }
-        return v.toString();
+        return "";
     }
     
     

@@ -10,20 +10,34 @@ package Laborator4.Exercitii_Laborator;
  * @author Ceachi Bogdan
  */
 public class Student extends Persoana {
-    int nota;
+    private static final int NOTA_IMPLICITA = 4;
+    private int nota;
 
-    public Student() {
-        
-    }
-
-    public Student(String newName, int nota) {
-        super(newName);
+    public Student(int nota, String nume, int varsta) {
+        super(nume, varsta);
         this.nota = nota;
     }
 
-    @Override
+
     public String toString() {
-        return super.toString() + ". Nota: " +  nota;
+        return "Student: " + super.toString() + ", " + nota;
+    }
+
+    public void invata() {
+        System.out.println("Studentul " + nume + " invata");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Student student = (Student) o;
+        return nota == student.nota && nume.equals(student.nume);
     }
     
     

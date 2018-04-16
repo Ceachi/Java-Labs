@@ -11,22 +11,29 @@ import java.util.List;
  * @author Ceachi Bogdan
  */
 public class Ex1 {
-    public static void main(String[] args) throws IOException {   
-        FileWriter fileWriter = null;
+    public static void main(String[] args) throws IOException {  
+        
+        BufferedWriter bufferWriter = null;
+        BufferedReader br = null;
+        String path = "C:\\Users\\Ceachi Bogdan\\Documents\\NetBeansProjects\\LaboratoareJava\\src\\Laborator6\\Exercitii_LaboratorPart1";
+        
         try {
-            List<String> lines = new ArrayList<String>();
-            BufferedReader br = new BufferedReader(new FileReader("in.txt"));
+            List<String> lines = new ArrayList<String>(); // lista in care bagam
+            br =  new BufferedReader(new FileReader(path + "\\" + "in2.txt"));
             String line;
             while((line = br.readLine() )!= null) {
                 lines.add(line);
             }
             
             Collections.sort(lines);
-            
-            fileWriter = new FileWriter("out.txt");
-            //BufferedWriter wr = new BufferedWriter(new FileWriter("out.txt"));
             for (String i : lines) {
-              fileWriter.write(i + "\n");
+                System.out.println(i);
+            }
+             br.close();
+             bufferWriter = new BufferedWriter(new FileWriter(path + "\\" + "in.txt"));
+           //BufferedWriter wr = new BufferedWriter(new FileWriter("out.txt"));
+            for (String i : lines) {
+              bufferWriter.write(i + "\n");
             }
            
         } catch(FileNotFoundException e) {
@@ -35,8 +42,8 @@ public class Ex1 {
             e.printStackTrace();
         }
         finally {
-            fileWriter.close();
-            
+            br.close();
+            bufferWriter.close();
         }
     }
 }

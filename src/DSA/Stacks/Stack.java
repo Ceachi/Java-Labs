@@ -1,4 +1,4 @@
-package DSA.Stacks;
+   package DSA.Stacks;
 // O alta implementare interesanta : https://introcs.cs.princeton.edu/java/43stack/Stack.java.html
 
 import java.util.EmptyStackException;

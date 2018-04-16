@@ -1,8 +1,8 @@
 package Laborator3.Exercitii_Laborator;
 
 public class CadruDidactic extends AngajatUTM{
-    int ore;
-    float tarif;
+    int ore; // numarul de ore
+    float tarif; // tariful lunar alocat
 
     public CadruDidactic(String nume, float salariuBaza, int ore, float tarif) {
         super(nume, salariuBaza);
@@ -38,17 +38,19 @@ public class CadruDidactic extends AngajatUTM{
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof CadruDidactic)) return false;
-        if (!super.equals(o)) return false;
-
-        CadruDidactic that = (CadruDidactic) o;
-
-        if (getOre() != that.getOre()) return false;
-        return Float.compare(that.getTarif(), getTarif()) == 0;
+        if(o == null) {
+            return false;
+        }   
+        if(o instanceof CadruDidactic) {
+            CadruDidactic cadruDidactic = (CadruDidactic) o;
+            return this.ore == cadruDidactic.ore && this.tarif == cadruDidactic.tarif;
+        }
+        return false;
     }
-
-    public float salariu(){
+    
+    @Override
+    public float salariu() {
         return super.getSalariuBaza()+ore*tarif;
     }
+    
 }

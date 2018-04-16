@@ -5,24 +5,50 @@
  */
 package Laborator4.Exercitii_Laborator;
 
+import java.util.Objects;
+
 /**
  *
  * @author Ceachi Bogdan
  */
 public class Persoana {
     String nume;
-    
-    Persoana() {
-        System.out.println("Apelare construcot Persoana");
+    int varsta;
+
+    public Persoana(String nume) {
+        this.nume = nume;
     }
-    
-    Persoana(String newName) {
-        nume = newName;
+
+    public Persoana(String nume, int varsta) {
+        this.nume = nume;
+        this.varsta = varsta;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if(o == null) {
+            return false;
+        }
+        if(o instanceof Persoana) {
+            Persoana persoana = (Persoana) o;
+            return varsta == persoana.varsta && nume.equals(persoana.nume);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + varsta;
+        return result;
+    }
+
     @Override
     public String toString() {
-        return  "Persoana{" + "nume=" + nume + '}';
+        return nume + ", " + varsta;
     }
+    
+    
     
     
     

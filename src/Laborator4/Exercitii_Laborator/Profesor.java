@@ -9,21 +9,29 @@ package Laborator4.Exercitii_Laborator;
  *
  * @author Ceachi Bogdan
  */
-public class Profesor extends Persoana {
-    String materie;
+public class Profesor extends Persoana {  
+    private static final String MATERIE_IMPLICITA = "Info";
 
-    public Profesor() {
-        
+    private String materie;
+
+
+    public Profesor(String nume, int varsta) {
+        super(nume, varsta);
+        this.materie = MATERIE_IMPLICITA;
     }
 
-    public Profesor(String materie, String newName) {
-        super(newName);
+    public Profesor(String nume, int varsta, String materie) {
+        super(nume, varsta);
         this.materie = materie;
     }
 
+    public void preda() {
+        System.out.println("Profesorul" + super.toString() + " preda " + materie);
+    }
+
     @Override
-    public String toString() {
-        return super.toString() + ". Nota: " +  materie;
+     public String toString() {
+        return "Profesor: " + super.toString() + ", " + materie;
     }
     
     

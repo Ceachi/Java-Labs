@@ -27,15 +27,17 @@ public class TSA  extends AngajatUTM{
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof TSA)) return false;
-        if (!super.equals(o)) return false;
-
-        TSA tsa = (TSA) o;
-
-        return getFunctie() != null ? getFunctie().equals(tsa.getFunctie()) : tsa.getFunctie() == null;
+        if(o == null) {
+            return false;
+        }
+        if(o instanceof AngajatUTM) {
+            TSA tsa = (TSA) o;
+            return this.functie.equals(tsa.functie);
+        }
+        return false;
     }
 
+    @Override
     public float salariu(){
         return 0.15f * super.getSalariuBaza() + super.getSalariuBaza();
     }

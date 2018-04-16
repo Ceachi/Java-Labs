@@ -1,9 +1,9 @@
 package Laborator3.Exercitii_Laborator;
 
-public class AngajatUTM {
+public abstract class AngajatUTM {
     String nume;
     float salariuBaza;
-    static String universitate = "UTM";
+    static String universitate = "UTM"; // Universitatea Titu Maiorescu
 
     public AngajatUTM(String nume, float salariuBaza) {
         this.nume = nume;
@@ -43,14 +43,16 @@ public class AngajatUTM {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof AngajatUTM)) return false;
-
-        AngajatUTM that = (AngajatUTM) o;
-
-        if (Float.compare(that.getSalariuBaza(), getSalariuBaza()) != 0)
+    public boolean equals(Object o) { 
+        if(o == null) {
             return false;
-        return getNume() != null ? getNume().equals(that.getNume()) : that.getNume() == null;
+        }
+        if(o instanceof AngajatUTM) {
+            AngajatUTM angajat = (AngajatUTM) o;
+            return this.nume == angajat.nume && this.salariuBaza == angajat.salariuBaza;
+        }
+        return false;
     }
+    
+    public abstract float salariu();
 }
