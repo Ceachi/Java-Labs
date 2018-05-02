@@ -40,6 +40,21 @@ public class Person {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Person)) return false;
+
+        Person person = (Person) o;
+
+        return getAge() == person.getAge();
+    }
+
+    @Override
+    public int hashCode() {
+        return getAge();
+    }
+
     public static void main(String[] args) {
         //the average of the age of the people older than 20
         List<Person> persons = Arrays.asList(
